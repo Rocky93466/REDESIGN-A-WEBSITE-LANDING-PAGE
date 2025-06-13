@@ -1,0 +1,51 @@
+// File: LandingPage.tsx
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+export default function LandingPage() {
+  return (
+    <div className="bg-white text-gray-900">
+      {/* Hero Section */}
+      <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
+        <h1 className="text-5xl font-extrabold mb-6">Transform Your Web Presence</h1>
+        <p className="text-lg max-w-xl mb-8">
+          Build beautiful, fast, and responsive websites with our powerful tools and templates.
+        </p>
+        <Button size="lg" className="flex items-center gap-2 bg-white text-blue-600 hover:bg-gray-100">
+          Get Started <ArrowRight size={20} />
+        </Button>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+          {[
+            { title: "Fast Performance", desc: "Optimized code and CDN-ready assets ensure blazing speed." },
+            { title: "Responsive Design", desc: "Looks perfect on every device and screen size." },
+            { title: "Easy to Customize", desc: "Modular components and clear docs make changes simple." },
+          ].map((feature, i) => (
+            <div key={i} className="bg-white p-8 rounded-2xl shadow hover:shadow-lg transition">
+              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p className="text-gray-600">{feature.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 bg-blue-600 text-white text-center">
+        <h2 className="text-3xl font-bold mb-4">Ready to launch your site?</h2>
+        <p className="mb-6 text-lg">Join thousands of creators using our platform.</p>
+        <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+          Start Free Trial
+        </Button>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-6 text-center text-gray-500 text-sm bg-gray-100">
+        © 2025 YourCompany. All rights reserved.
+      </footer>
+    </div>
+  );
+}
